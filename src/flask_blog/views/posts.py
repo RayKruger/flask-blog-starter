@@ -26,11 +26,12 @@ def create():
     if request.method == "POST":
         title = request.form["title"]
         content = request.form["content"]
-
+        tag = request.form["tag"]
+        
         if not title:
             flash("Title is required!")
         else:
-            new_post = Post(title=title, content=content)
+            new_post = Post(title=title, content=content,taggg=tag)
 
             db.session.add(new_post)
             db.session.commit()
